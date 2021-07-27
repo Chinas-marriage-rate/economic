@@ -2,12 +2,13 @@
 MULTIPLE REGRESSION MODEL FOR PREDICTING GDP USING MACROECONOMIC VARIABLES
 # Introduction
 This short essay explores how one may predict the Gross Domestic Product (GDP) of a country using a technique known as multiple linear regression. Specifically, we examine whether other macroeconomic variables such as population, interest rates, unemployment rates, amongst others, can be used to predict the GDP of a country. Linear regression is a statistical model for finding the relationship between input variables (also known as Independent/explanatory variables) and output variables (dependent/response variables). Linear regression models are used for predicting continuous variables compared to logistic regression models used for predicting categorical outcomes. 
-
+EXPLORATORY ANALYSIS
 The data consists of 272 records and 28 features. We are interested in modeling multiple independent variables to determine the relationships between these variables and the dependent variable (GDP). We also examined colinearity and interactions of the independent variables on our model. To aid in understanding the relationships between the variables we used scatterplots like the one shown below.
 
+![image](https://user-images.githubusercontent.com/54149747/127119704-7b3c2a5b-9677-4a6f-906c-ecb1397c2f17.png)
  
 Based on our exploratory analysis and given that we are trying to predict a continuous variable, we concluded that our best choice for this part of the research is a linear regression model.  
-# Base Model:
+Base Model:
 We start the regression analysis by initially modeling GDP with the variables listed below. Subsequently, after building the initial model, we added additional macroeconomic variables that could potentially improve the performance of the model.
 
 Model:  
