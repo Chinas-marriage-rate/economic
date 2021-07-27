@@ -133,7 +133,7 @@ This model is an extension of the extended model 1 above. This new model uses al
 
 The output of this new model is shown below:   
 Model: ![image](https://user-images.githubusercontent.com/54149747/127203156-91db2a9d-3925-463d-89cb-9d2a70a4e173.png)
-![image](https://user-images.githubusercontent.com/54149747/127203314-9642e650-c72d-49cb-84e0-548eb5ca276e.png)
+![image](https://user-images.githubusercontent.com/54149747/127205366-fedcf835-1e84-4507-bdd8-4721b93429cb.png)
 
 **p-value:** We see that the precision of our estimated coefficients reduces. Disposable income, unemployment rate, and House price index remain highly significant, while population rate is moderately significant and interest rate has a low significant level, as shown in Table 3. However, maturity rate, corporate profit, and Inflation rate appear not to be statistically significant. This could be traced to the multicollinearity effect when new variables are added.
 
