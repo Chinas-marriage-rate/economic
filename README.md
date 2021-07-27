@@ -1,6 +1,5 @@
-# Credit-Risk-Management - PART 1(A) 
-MULTIPLE REGRESSION MODEL FOR PREDICTING GDP USING MACROECONOMIC VARIABLES
-# Introduction
+# MULTIPLE REGRESSION MODEL FOR PREDICTING GDP USING MACROECONOMIC VARIABLES
+   # Introduction
 This short essay explores how one may predict the Gross Domestic Product (GDP) of a country using a technique known as multiple linear regression. Specifically, we examine whether other macroeconomic variables such as population, interest rates, unemployment rates, amongst others, can be used to predict the GDP of a country. Linear regression is a statistical model for finding the relationship between input variables (also known as Independent/explanatory variables) and output variables (dependent/response variables). Linear regression models are used for predicting continuous variables compared to logistic regression models used for predicting categorical outcomes.
 
 When we have just one input variable, it is a case of a simple linear regression whose equation is of the form;
@@ -14,7 +13,7 @@ For multiple linear regression, which consists of more than one independent vari
 
 It should be noted that for i=1,2,…n the relationship between the dependent variable Y and the k independent variables x_1,x_2,…,x_k are linear in the parameters. The matrix form of the general linear model is written as;  ![image](https://user-images.githubusercontent.com/54149747/127186271-e17c5d1a-6984-4684-a844-71127b7e92ca.png)
 
-# Parameter Estimation
+   # Parameter Estimation
 
 The base model for linear regression is the “Least Square Estimate”. It squares and sums all the vertical deviations from each observation(data points) to the line, and the goal is to minimize the error. The least-square estimation is commonly used in fitting the regression line.
 
@@ -55,7 +54,7 @@ Data: Gross Domestic Product (U.S. Bureau of Economic Analysis)
 **Note:** The data for each macroeconomic variable considered was downloaded and merged into one single excel sheet to form one single table. Additional macroeconomic variables were added using data munging/wrangling techniques to determine how they contribute to our model. 
 Period Covered by Data: 04/01/1953 – 01/01/2021
 
-# Data Transformation & Processing:
+   # Data Transformation & Processing:
 
 Missing values were handled using several methods as documented below;
 
@@ -89,14 +88,14 @@ We start the regression analysis by initially modeling GDP with the variables li
 **Model:** ![image](https://user-images.githubusercontent.com/54149747/127196844-a0df8867-e65f-44ea-8c8c-4622e13c0277.png)
 Where each variable represents the Annual percent returns and regression coefficients obtained are approximated to three decimal places.
 
-# Result 
+   # Result 
 ![image](https://user-images.githubusercontent.com/54149747/127200765-e9ae56e3-ad04-40ce-8302-701e8153b361.png)
 
 **p-value**: Disposable income, unemployment rate and House Price Index (HPI) are highly significant as shown in Table 1. However, both the population rate and the Maturity rate variable are moderately significant, whereas interest rate appears not to be significant.
 **Multicollinearity Check:** We obtained the Variance Inflation Factor (VIF) to check if multicollinearity exists among the independent variables. Research suggested that a VIF=1 implies no multicollinearity, VIF = 1.0 to 5.0 shows moderate collinearity, while VIF >5 implies the independent variables are highly correlated. In this analysis, we set the threshold for VIF to 2. Therefore, we assumed that VIF >2 seems to be indicative of multicollinearity. In Table 1, we concluded that each independent variable is not correlated with the other since each VIF ≤2. Similarly, the VIF barplot below shows that none of the variables breached the threshold line (>2 ). The Adjusted R-square (83.7%) Implies that about 84% of the change in GDP is explained by the changes in the predictor variables. 
 ![image](https://user-images.githubusercontent.com/54149747/127201078-6c2200e8-71ec-48b1-b3d2-7cbc0044489f.png)
  
-# Improving the Model
+   # Improving the Model
 In order to determine whether we can improve the performance of our model, we added the following additional variables one at a time to the base model:
 
 ●	**Corporate Profit(CP)**: the predictor variable is “Corporate Profit after Tax (without IVA and CCAdj) annual percent” (Corp).
@@ -142,10 +141,10 @@ Model: ![image](https://user-images.githubusercontent.com/54149747/127203156-91d
 **Multicollinearity Check:** From Table 3, based on the VIF threshold that we set for this research, only population, maturity rate, disposable income, and unemployment rate variables have VIF<2 which indicates no multicollinearity. Interest rate and House price index with VIF~≤2 shows very little or no multicollinearity. However, Corporate profit and Inflation rate variables show some level of multicollinearity with VIF>2. Although, research suggested that a VIF≤5 has moderate collinearity for research purposes. We observed that the R^2 (90.5%) and the adjusted R^2 (89.4%) increases compared to what we have in Table 2. This shows that the new variable improves the model fit even though with some level of moderately acceptable multicollinearity.
 ![image](https://user-images.githubusercontent.com/54149747/127203544-42eef81c-f2f9-4c7a-85ae-8b70b0f615f8.png)
  
-# Conclusion:
+   # Conclusion:
 In this essay, we examined how GDP could be predicted using other macroeconomic variables. To achieve this objective, we used multiple linear regression analysis.  We first built a based model and then extended the base model to inculcate additional variables to determine whether we could improve the performance of our base model. We also evaluated how each additional variable impacted our regression fit by comparing the VIF’s and the p-values at a 5% significant level. The multiple linear regression model appears to be a suitable model for determining a linear relationship between dependent and independent features.
 
-# References
+   # References
 ●	FRED Economic Data : https://fred.stlouisfed.org/series
 
 ●	Felipe Rego  : https://feliperego.github.io/blog/2015/10/23/Interpreting-Model-Output-In-R
