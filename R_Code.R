@@ -119,6 +119,6 @@ summary(model_n1)
 #VIF
 library(car)
 vif3<-vif(model_n1);vif3
-barplot(vif3, main = "VIF Values", horiz = TRUE, col = "grey")
+barplot(vif3, main = "VIF Values", horiz = TRUE, col = "green")
 #add vertical line at VIF=2
 abline(v = 2, lwd = 3, lty = 2, col="red")
