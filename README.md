@@ -101,7 +101,9 @@ In order to determine whether we can improve the performance of our model, we ad
 ●	**Corporate Profit(CP)**: the predictor variable is “Corporate Profit after Tax (without IVA and CCAdj) annual percent” (Corp).
 
 **●	10-Year Breakeven inflation rate (T10YIE)**: the predictor variable is “10-Year Breakeven inflation rate annual percent” (T10YIE).
-Process Followed to Add New Macroeconomic Variables to the Existing Dataset:
+
+**Process Followed to Add New Macroeconomic Variables to the Existing Dataset:**
+
 In order to merge the additional variable(s) into the existing data in R,  we performed the following steps:
 
 ●	Prepared a working data frame to correctly merge the new variable with the existing macroeconomic variables.
