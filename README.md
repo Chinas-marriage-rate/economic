@@ -97,27 +97,56 @@ Where each variable represents the Annual percent returns and regression coeffic
 ![image](https://user-images.githubusercontent.com/54149747/127201078-6c2200e8-71ec-48b1-b3d2-7cbc0044489f.png)
  
 # Improving the Model
-In order to determine whether we can improve the performance of our model, we added the following additional variables one at a time to the base model: 
-	Corporate Profit(CP): the predictor variable is “Corporate Profit after Tax (without IVA and CCAdj) annual percent” (Corp).
-	10-Year Breakeven inflation rate (T10YIE): the predictor variable is “10-Year Breakeven inflation rate annual percent” (T10YIE).
+In order to determine whether we can improve the performance of our model, we added the following additional variables one at a time to the base model:
+
+●	**Corporate Profit(CP)**: the predictor variable is “Corporate Profit after Tax (without IVA and CCAdj) annual percent” (Corp).
+
+**●	10-Year Breakeven inflation rate (T10YIE)**: the predictor variable is “10-Year Breakeven inflation rate annual percent” (T10YIE).
 Process Followed to Add New Macroeconomic Variables to the Existing Dataset:
 In order to merge the additional variable(s) into the existing data in R,  we performed the following steps:
-	Prepared a working data frame to correctly merge the new variable with the existing macroeconomic variables.
-	Ensured that the “Date” column is set as the “primary key” so that when importing the new data, the “date” column is in date format rather than a factor format. This step was necessary because not all the variables are available for exactly for the same timeframe. 
-	We inspected the new combined data to make sure everything that the data properly aligned. For example, by checking for missing values and filling them using the “mice package” if they exist. 
-# p-value: 
-Disposable income, unemployment rate, House price index, and corporate profit (newly added) are highly significant as shown in Table 2. However, both the population rate and maturity rate variable are moderately significant, whereas interest rate appears not to be significant. 
-# Multicollinearity Check: 
 
-From Table 2, each VIF<2 shows no multicollinearity based on the threshold. Similarly, the VIF barplot in figure 2 shows that none of the variables cut across the threshold line(>2 ). We observed that the R^2 (84.4%) and the adjusted R^2 (83.9%) increases slightly than what we had in Table 1. This shows that the new variable slightly improves the model fit. 
+●	Prepared a working data frame to correctly merge the new variable with the existing macroeconomic variables.
 
+●	Ensured that the “Date” column is set as the “primary key” so that when importing the new data, the “date” column is in date format rather than a factor format. This step was necessary because not all the variables are available for exactly for the same timeframe.
 
-	p-value: We see that the precision of our estimated coefficients reduces. Disposable income, unemployment rate, and House price index remain highly significant, while population rate is moderately significant and interest rate has a low significant level, as shown in Table 3. However, maturity rate, corporate profit, and Inflation rate appear not to be statistically significant. This could be traced to the multicollinearity effect when new variables are added. 
-NOTE: Since multicollinearity affects p-values, and regression coefficients, we cannot trust the p-values obtained even though it does not influence our predictions.     
-# Multicollinearity Check: 
-  From Table 3, based on the VIF threshold that we set for this research, only population, maturity rate, disposable income, and unemployment rate variables have VIF<2 which indicates no multicollinearity. Interest rate and House price index with VIF~≤2 shows very little or no multicollinearity. However, Corporate profit and Inflation rate variables show some level of multicollinearity with VIF>2. Although, research suggested that a VIF≤5 has moderate collinearity for research purposes. We observed that the R^2 (90.5%) and the adjusted R^2 (89.4%) increases compared to what we have in Table 2. This shows that the new variable improves the model fit even though with some level of moderately acceptable multicollinearity.
+●	We inspected the new combined data to make sure everything that the data properly aligned. For example, by checking for missing values and filling them using the “mice package” if they exist.
+
+●	All the steps performed are documented in the accompanying R code available on the author’s GitHub page.
+
+**Extended Model 1- (Base Model Plus Corporate Profit Variable)**
+
+This model is an extension of the base model. This new model uses all the variables used for modeling the base model and an additional variable (Corporate Profit Variable).
+The output of this new model is shown below:
+
+**Model:**
+![image](https://user-images.githubusercontent.com/54149747/127202293-fe1e77eb-55f2-4748-9600-ead72c7ab5a9.png)
+![image](https://user-images.githubusercontent.com/54149747/127202553-6225582a-70e0-4bdb-a084-20c11ff066bd.png)
+
+**p-value:** Disposable income, unemployment rate, House price index, and corporate profit (newly added) are highly significant as shown in Table 2. However, both the population rate and maturity rate variable are moderately significant, whereas interest rate appears not to be significant.
+
+**Multicollinearity Check:** From Table 2, each VIF<2 shows no multicollinearity based on the threshold. Similarly, the VIF barplot in figure 2 shows that none of the variables cut across the threshold line(>2 ). We observed that the R^2 (84.4%) and the adjusted R^2 (83.9%) increases slightly than what we had in Table 1. This shows that the new variable slightly improves the model fit. 
+
+![image](https://user-images.githubusercontent.com/54149747/127203930-2fc0073c-e147-48e4-a58f-4b5d7e2e6532.png)
+
+**Extended Model 2- (Extended Model 1 Plus 10-Year Breakeven Inflation Rate)**
+This model is an extension of the extended model 1 above. This new model uses all the variables used for modeling the extended model 1 above and an additional variable (10-Year Breakeven Inflation Rate).
+
+The output of this new model is shown below:   
+Model: ![image](https://user-images.githubusercontent.com/54149747/127203156-91db2a9d-3925-463d-89cb-9d2a70a4e173.png)
+![image](https://user-images.githubusercontent.com/54149747/127203314-9642e650-c72d-49cb-84e0-548eb5ca276e.png)
+
+**p-value:** We see that the precision of our estimated coefficients reduces. Disposable income, unemployment rate, and House price index remain highly significant, while population rate is moderately significant and interest rate has a low significant level, as shown in Table 3. However, maturity rate, corporate profit, and Inflation rate appear not to be statistically significant. This could be traced to the multicollinearity effect when new variables are added.
+
+**NOTE:** Since multicollinearity affects p-values, and regression coefficients, we cannot trust the p-values obtained even though it does not influence our predictions.
+
+**Multicollinearity Check:** From Table 3, based on the VIF threshold that we set for this research, only population, maturity rate, disposable income, and unemployment rate variables have VIF<2 which indicates no multicollinearity. Interest rate and House price index with VIF~≤2 shows very little or no multicollinearity. However, Corporate profit and Inflation rate variables show some level of multicollinearity with VIF>2. Although, research suggested that a VIF≤5 has moderate collinearity for research purposes. We observed that the R^2 (90.5%) and the adjusted R^2 (89.4%) increases compared to what we have in Table 2. This shows that the new variable improves the model fit even though with some level of moderately acceptable multicollinearity.
+![image](https://user-images.githubusercontent.com/54149747/127203544-42eef81c-f2f9-4c7a-85ae-8b70b0f615f8.png)
  
 # Conclusion:
 In this essay, we examined how GDP could be predicted using other macroeconomic variables. To achieve this objective, we used multiple linear regression analysis.  We first built a based model and then extended the base model to inculcate additional variables to determine whether we could improve the performance of our base model. We also evaluated how each additional variable impacted our regression fit by comparing the VIF’s and the p-values at a 5% significant level. The multiple linear regression model appears to be a suitable model for determining a linear relationship between dependent and independent features.
 
+# References
+●	FRED Economic Data : https://fred.stlouisfed.org/series
+
+●	Felipe Rego  : https://feliperego.github.io/blog/2015/10/23/Interpreting-Model-Output-In-R
 
