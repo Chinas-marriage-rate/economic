@@ -40,7 +40,7 @@ Having established sufficient theoretical background on linear regression, we no
 ●	Alternatively, we could create a vector matrix by using the “matrix()” function in R, then apply the “lm” function to obtain the same result as shown below.
 ![image](https://user-images.githubusercontent.com/54149747/127195650-2dfcc6dd-1df2-4d26-b723-044de0e7b020.png)
 
-WORKING WITH MACROECONOMIC VARIABLES USING MULTIPLE LINEAR REGRESSION
+**WORKING WITH MACROECONOMIC VARIABLES USING MULTIPLE LINEAR REGRESSION**
 
 **Case Study:**
 
@@ -55,7 +55,7 @@ Data: Gross Domestic Product (U.S. Bureau of Economic Analysis)
 **Note:** The data for each macroeconomic variable considered was downloaded and merged into one single excel sheet to form one single table. Additional macroeconomic variables were added using data munging/wrangling techniques to determine how they contribute to our model. 
 Period Covered by Data: 04/01/1953 – 01/01/2021
 
-**Data Transformation & Processing:**
+# Data Transformation & Processing:
 
 Missing values were handled using several methods as documented below;
 
@@ -71,7 +71,7 @@ The data consists of 272 records and 28 features. We are interested in modeling 
 ![image](https://user-images.githubusercontent.com/54149747/127119704-7b3c2a5b-9677-4a6f-906c-ecb1397c2f17.png)
  
 Based on our exploratory analysis and given that we are trying to predict a continuous variable, we concluded that our best choice for this part of the research is a linear regression model.  
-Base Model:
+**Base Model:**
 
 We start the regression analysis by initially modeling GDP with the variables listed below. Subsequently, after building the initial model, we added additional macroeconomic variables that could potentially improve the performance of the model.
 
