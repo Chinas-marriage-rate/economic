@@ -108,7 +108,7 @@ In order to merge the additional variable(s) into the existing data in R,  we pe
 
 ●	Prepared a working data frame to correctly merge the new variable with the existing macroeconomic variables.
 
-●	Ensured that the “Date” column is set as the “primary key” so that when importing the new data, the “date” column is in date format rather than a factor format. This step was necessary because not all the variables are available for exactly for the same timeframe.
+●	Ensured that the “Date” column is set as the “primary key” so that when importing the new data, the “date” column is in date format rather than a factor format. This step was necessary because not all the variables are available for exactly the same timeframe.
 
 ●	We inspected the new combined data to make sure everything that the data properly aligned. For example, by checking for missing values and filling them using the “mice package” if they exist.
 
