@@ -144,7 +144,7 @@ Model: ![image](https://user-images.githubusercontent.com/54149747/127203156-91d
 ![image](https://user-images.githubusercontent.com/54149747/127244365-3aef447f-75d4-4ec8-a1e4-cdeff04914a7.png)
  
    # Conclusion:
-In this essay, we examined how GDP could be predicted using other macroeconomic variables. To achieve this objective, we used multiple linear regression analysis.  We first built a based model and then extended the base model to inculcate additional variables to determine whether we could improve the performance of our base model. We also evaluated how each additional variable impacted our regression fit by comparing the VIF’s and the p-values at a 5% significance level. The multiple linear regression model appears to be a suitable model for determining a linear relationship between dependent and independent features.
+In this essay, we examined how GDP could be predicted using other macroeconomic variables. To achieve this objective, we used multiple linear regression analysis.  We first built a base model and then extended the base model to inculcate additional variables to determine whether we could improve the performance of our base model. We also evaluated how each additional variable impacted our regression fit by comparing the VIF’s and the p-values at a 5% significance level. The multiple linear regression model appears to be a suitable model for determining a linear relationship between dependent and independent features.
 
    # References
 ●	FRED Economic Data : https://fred.stlouisfed.org/series
