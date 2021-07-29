@@ -47,7 +47,7 @@ abline(res)
 corporate_P<- read.csv("CPn.csv", stringsAsFactors=FALSE)
 head(corporate_P)
 tail(corporate_P)
-#Merging the "T10YIE" variable to the original data
+#Merging the "Corp.AP" variable to the original data
 data_n <- merge(data,corporate_P, by ="DATE")
 #Check if updated
 head(data_n)
